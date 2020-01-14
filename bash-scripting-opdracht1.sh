@@ -1,13 +1,13 @@
 #!/bin/bash 
 
 [[ $# -ne 1 ]] && { echo "Geef exact één parameter!"; exit 1; }
-[[ ! -d "$1" ]] && { echo "Dit is geen geldige directory"; exit 1; }
+[[ ! -d "${1}" ]] && { echo "Dit is geen geldige directory"; exit 1; }
 
 leesbare_entries=0
 uitvoerbare_entries=0
 leesbare_uitvoerbare_entries=0                                                                                                                                                                                                                
 
-for item in $(ls -1 $1)
+for item in $(ls -1 "${1}")
 do
     echo "Test op ${item}"
     [[ -r "${item}" ]] && leesbare_entries=$((leesbare_entries + 1))
